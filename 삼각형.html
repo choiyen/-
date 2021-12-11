@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function solution(a,b,c)
+        {
+            let answer = "Yes", max;
+            let mix = a+b+c;
+            if(a<b) max = b;
+            else max = a;
+            if(max < c) max = c; //제일 큰 값
+            if(mix - max <= max)
+            {
+                answer = "NO";
+            }
+
+            return answer;
+        }
+        console.log(solution(13,37,17));
+    </script>
+
+    
+</body>
+</html>
