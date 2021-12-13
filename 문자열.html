@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function solution(s)
+        {
+            let answer = "", max = Number.MIN_SAFE_INTEGER;
+            for(let x of s)
+            {
+                for(let x of s)
+                {
+                    if(x.length > max)
+                    {
+                        max = x.length;
+                        answer = x;
+                    }
+                }
+            }
+            return answer;
+        }
+        let str=["teacher", "time", "student", "beautiful", "good"];
+         console.log(solution(str));
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let answer;
+                //console.log(s.indexOf("time"));
+                answer = s.filter(function(v,i)
+                {
+                    if(s.indexOf(v) == i)
+                    {
+                        if(s.indexOf(v) == i) return true;
+                    }
+
+                });//if문에서 참이 되는 요소만 뽑아 갱신.
+                return answer;
+            }
+            let str=["good", "time", "good", "time", "student"];
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
+
+//전, while 반복문과 문자열 비교 함수를 사용해, 같을 경우. 스택에 담아두고, 
+같은 걸 찾지 못했을 경우에만 집어넣으려고 했습니다.
+//너무 복잡하게 생각한 느낌이 강하네요. 반성반성.....
+//그렇게 풀면 되기는 했는데, 너무 복잡해져 테스트 통과가 어렵네요.
+
+
