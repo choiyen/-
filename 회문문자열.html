@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            function solution(s){
+                let answer="YES";
+                s=s.toLowerCase();
+                let len=s.length;
+                for(let i=0; i<Math.floor(len/2); i++)//사실 홀수라도 ++이므로 돌아가기는 함.
+                {
+                    if(s[i]!=s[len-i-1]) return "NO";
+                }
+                return answer;
+            }
+            let str="goooG";
+            console.log(solution(str));
+        </script>
+        <input type ="time">
+   </body>
+</html>
+
+//Math.floor : 내림함.
