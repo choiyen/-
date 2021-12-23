@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    function solution(str)
+    {
+      let answer = "";
+      let a= str.length;
+      for(let x of str)
+      {
+          if(!isNaN(x)) answer +=x;
+      }
+      return answer;
+    }
+   
+   
+   
+   let str="g0en2T0s8eSoft";
+   console.log(solution(str));
+  </script>
+</body>
+</html>
+
+//for문을 이용해 값을 집어넣을려고 했는데, 안됨. 
+//문자열을 빼내서 Parseint를 이용해 일일이 변환시켜 처리하려고 했는데 깨짐.
+//문자에 접근을 잘못함.
