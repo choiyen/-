@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            function solution(arr)
+            {
+                let answer = [];
+                let sortArr = arr.slice();
+                sortArr.sort((a,b) => a-b);
+                for(let i = 0; i<arr.length; i++)
+                {
+                    if(arr[i] !==sortArr[i]) answer.push(i+1);
+                    //두개가 다른 위치의 값이 있을 경우, 그 자리의 자리값을 더한다. 그러나 번째는 0부터 시작이므로 1을 더해야 한다.
+                }
+                return answer;
+            }
+            let arr=[120, 125, 152, 130, 135, 135, 143, 127, 160];
+            console.log(solution(arr));   
+    </script>
+    <input type="reset">
+</body>
+</html>
