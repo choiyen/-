@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            function count(stable, dist)
+            {
+               let cnt=1, ep=stable[0];//방금전 말을 배치한 첫번째 자리.
+               for(let i=1; i<stable.length; i++){
+                   if(stable[i]-ep>=dist)//말의 놓은 위치 사이의 거리가 무조건 최소 보다 커야함.
+                   {
+                       cnt++;
+                       ep=stable[i];
+                   }
+               }
+               return cnt;
+            }
+
+            function solution(c, stable)
+            {
+                let answer;
+                stable.sort((a, b)=>a-b);//마굿간 좌표 정렬
+                let lt=1;//초기값
+                let rt=stable[stable.length-1];//제일 마지막.
+                while(lt<=rt){//이분검색
+                    let mid=parseInt((lt+rt)/2);
+                    if(count(stable, mid) >=c)
+                    {
+                        answer=mid;
+                        lt=mid+1;//더 큰 것을 찾아야 함.
+                    }
+                    else rt=mid-1;//이 거리로는 말을 배치할 수 없으니, 더 큰 범위는 비교할 필요가 없음. 
+
+                }
+                return answer;
+            }
+            let arr=[1, 2, 8, 4, 9];
+            console.log(solution(3, arr));
+    </script>
+ <input type = "password">
+</body>
+</html>

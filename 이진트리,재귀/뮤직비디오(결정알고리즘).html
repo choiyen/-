@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            function count(songs,capacity)
+            {
+                let cnt = 1, sum =0;
+                for(let x of songs)
+                {
+                    if(sum+x > capacity){
+                        cnt++;
+                        sum=x;
+                    }
+                    else sum+=x;
+                }
+
+                return cnt;
+            }//답을 유효한가를 확인해야 하는 함수
+            function solution(m,songs)
+            {
+                let answer;
+                let lt = Math.max(...songs);//제일 큰 값을 잡는다-그 이유는 노래가 짤려서 들어갈 수 없는 까닭이다. 
+                console.log(lt);
+                let rt = songs.reduce((a,b)=> a+b,0);
+                console.log(rt);//숫자를 합하는 것-45
+                /*
+                for(let i = 0; i < songs.length; i++)
+                {
+                    rt+= songs[i];
+                }
+                */
+                while(lt <= rt)
+                {
+                    let mid = parseInt((lt+rt)/2);
+                    if(count(songs,mid) <= m)
+                    {
+                        answer = mid;
+                        rt = mid -1;
+                    }
+                    else
+                    {
+                        lt = mid + 1;
+                    }
+                }
+                return answer;
+            }
+            let arr=[1, 2, 3, 4, 5, 6, 7, 8, 9];
+            console.log(solution(3, arr));//DVD 세개에 늘어갈 수 있는 노래의 양을 찾는 것
+    </script>
+    <input type = "radio">
+</body>
+</html>
+
+//틀림....
+//왜 중간값을 잡아야 하는지를 잘 모르겠다. 
+//
