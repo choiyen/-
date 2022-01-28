@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function solution(m,arr)
+    {
+        let answer = Number.MAX_SAFE_INTEGER;
+        let n = arr.length;
+        function DFS(L,sum)
+        {
+            if(sum > m) return;
+            if(L >= answer) return;
+            if(sum == m)
+            {
+                answer = Math.min(answer,L);
+            }
+            else
+            {
+                for(let i =0; i<n; i++)
+                {
+                    DFS(L+1,sum+arr[i]);
+                }
+            }
+        }
+    }
+    let arr=[1, 2, 5];
+    console.log(solution(15, arr));
+</script>
+
+<input type = "radio">
+</body>
+</html>

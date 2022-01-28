@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function solution(n,m)
+        {
+            let answer = [];
+            let tmp = Array.from({length : m}, () => 0);
+            function DFS(L,s)
+            {
+                if(L==m)
+                {
+                    answer.push(tmp.slice());
+                }
+                else
+                {
+                    for(let i = s; i<=n; i++)
+                    {
+                        tmp[L] = i;
+                        DFS(L+1,i+1);
+                    }
+                }
+            }
+        }
+        console.log(solution(4,2));
+    </script>
+    
+    <input type = "radio">
+</body>
+</html>
