@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           function solution(board)
+           {
+               let answer = 0;
+               let n = board.length;
+               let dx=[-1, -1, 0, 1, 1, 1, 0, -1];
+               let dy=[0, 1, 1, 1, 0, -1, -1, -1];
+               function DFS(x,y)
+               {
+                   board[x][y] = 0;
+                   for(let k = 0; k <8; k++)
+                   {
+                       let nx = x+dx[k];
+                       let ny = y+dy[k];
+                       if(nx>=0 && nx <n &&ny>=0 && ny <n&& board[nx][ny] ==1)
+                        {
+                            DFS(nx,ny);
+                        }
+                   }
+               }
+           }
+            let arr=[[1, 1, 0, 0, 0, 1, 0], 
+                     [0, 1, 1, 0, 1, 1, 0],
+                     [0, 1, 0, 0, 0, 0, 0],
+                     [0, 0, 0, 1, 0, 1, 1],
+                     [1, 1, 0, 1, 1, 0, 0],
+                     [1, 0, 0, 0, 1, 0, 0],
+                     [1, 0, 1, 0, 1, 0, 0]];
+            console.log(solution(arr));
+    </script>
+    <input type="number">
+    <input type = "radio">
+</body>
+</html>
