@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function solution(n)
+        {
+            let answer = 0;
+            let dp = Array.from({length : n+1}, () => 0);
+            dp[0] = 1;
+            let max = 0;
+            for(let i = 1; i <n.length; i++)
+            {
+                for(let j = i-1; j >=0; j--)
+                {
+                    if(n[i] > n[j] && dp[j] > max)
+                    {
+                        max = dp[j];
+                    }
+                }
+                dp[i] = max+1;
+                answer = Math.max(answer,dp[i]);
+            }
+            return answer;
+        }
+        let arr=[5, 3, 7, 8, 6, 2, 9, 4];
+        console.log(solution(arr));
+    </script>
+    <input type="button">
+</body>
+</html>
