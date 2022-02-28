@@ -13,19 +13,20 @@
             let answer = 0;
             let dy = Array.from({length : m+1}, () => 1000);
             dy[0] = 0;
-            for(let i = 1; i <arr.length; i++)
+            for(let i = 0; i < coin.length; i++)
             {
-                for(let j = coin[i]; j <=m; j++)
+                for(let j = coin[i]; j <= m; j++)
                 {
-                    dy[j] = Math.min(dy[j],dy[j-coin[i]]+1);
+                    dy[j] = Math.min(dy[j],dy[j-coin[i]]+1);//앞선 결과에서 5인 값을 추가하는 방식. 예를 들어, 10번째 값이 2이니까, 15번쨰는 5짜리가 1하 추가되므로 8에서 3으로 바뀌게 된다. 
                 }
+                console.log(dy);
             }
             answer = dy[m];
             return answer;
         }
         let arr = [1,2,5];
-        console.log(solution(15, arr));
+        console.log(solution(15,arr));
     </script>
-    <input type = "radio">
+    <input type="button">
 </body>
 </html>
